@@ -1,0 +1,162 @@
+/* src/index.css */
+
+/* =========================
+   CSS Variables for Theming
+   ========================= */
+/* src/index.css */
+
+:root {
+  --primary-color: #e50914; /* Red */
+  --secondary-color: #c53030; /* Darker red */
+  --background-color: #000000; /* Black */
+  --text-color: #ffffff; /* White */
+  --light-gray: #a0aec0; /* Light gray for secondary text */
+  --dark-gray: #1a1a1a; /* Dark gray for backgrounds */
+  --border-color: #333333; /* Slightly lighter black for borders */
+  --success-color: #38a169; /* Green for success messages */
+  --error-color: #e53e3e; /* Red for error messages */
+  --font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  --transition-speed: 0.3s;
+  --border-radius: 0.375rem; /* Equivalent to rounded */
+}
+
+/* =========================
+   Global Styles
+   ========================= */
+
+/* Reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--background-color); /* Black background */
+  color: var(--text-color); /* White text */
+  line-height: 1.6;
+}
+
+/* Links */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* =========================
+   Custom Scrollbar Styles
+   ========================= */
+
+/* WebKit Browsers (Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+  width: 12px; /* Width of the entire scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: var(
+    --background-color
+  ); /* Black background of the scrollbar track */
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color); /* Red scrollbar thumb */
+  border-radius: 6px;
+  border: 3px solid var(--background-color); /* Creates padding around thumb */
+  transition: background-color 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--secondary-color); /* Lighter red on hover */
+}
+
+/* Scrollbar Corner (optional) */
+::-webkit-scrollbar-corner {
+  background: var(--background-color);
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin; /* "auto" or "thin" */
+  scrollbar-color: var(--primary-color) var(--background-color); /* thumb and track color */
+}
+
+/* Specific Scrollbar Styling */
+.product-list-container::-webkit-scrollbar,
+.product-detail-container::-webkit-scrollbar {
+  width: 10px;
+}
+
+.product-list-container::-webkit-scrollbar-track,
+.product-detail-container::-webkit-scrollbar-track {
+  background: var(--background-color);
+}
+
+.product-list-container::-webkit-scrollbar-thumb,
+.product-detail-container::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color);
+  border-radius: 5px;
+  border: 2px solid var(--background-color);
+}
+
+.product-list-container::-webkit-scrollbar-thumb:hover,
+.product-detail-container::-webkit-scrollbar-thumb:hover {
+  background-color: var(--secondary-color);
+}
+
+.product-list-container,
+.product-detail-container {
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary-color) var(--background-color);
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* =========================
+   Additional Global Styles
+   ========================= */
+
+/* Buttons */
+button {
+  font-family: inherit;
+}
+
+/* Forms */
+input,
+textarea,
+select {
+  font-family: inherit;
+}
+
+/* Utilities */
+.mt-4 {
+  margin-top: 1rem;
+}
+
+.mb-6 {
+  margin-bottom: 1.5rem;
+}
+
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.py-2 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+/* Add more utility classes as needed */
