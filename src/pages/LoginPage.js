@@ -5,7 +5,7 @@ import authService from "../services/authService";
 import { useNavigate, Link } from "react-router-dom";
 import { LockClosedIcon, EyeIcon, EyeOffIcon } from "@heroicons/react/solid";
 import { CartContext } from "../contexts/CartContext";
-import "../styles/LoginPage.css";
+import "../styles/LoginPage.css"; // Import LoginPage CSS
 
 function LoginPage() {
   const [username, setUsername] = useState("");

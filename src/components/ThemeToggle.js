@@ -1,25 +1,22 @@
 // src/components/ThemeToggle.js
+
 import React, { useContext } from "react";
 import { ThemeContext } from "../contexts/ThemeContext";
 import { SunIcon, MoonIcon } from "@heroicons/react/solid";
 
 function ThemeToggle() {
-  const { theme, setTheme } = useContext(ThemeContext);
-
-  const toggleTheme = () => {
-    setTheme(theme === "dark" ? "light" : "dark");
-  };
+  const { theme, toggleTheme } = useContext(ThemeContext);
 
   return (
     <button
       onClick={toggleTheme}
-      className="p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"
-      aria-label="Toggle Dark Mode"
+      className="theme-toggle-button"
+      aria-label="Toggle theme"
     >
       {theme === "dark" ? (
-        <SunIcon className="h-6 w-6 text-yellow-500" />
+        <SunIcon className="toggle-icon" />
       ) : (
-        <MoonIcon className="h-6 w-6 text-gray-800" />
+        <MoonIcon className="toggle-icon" />
       )}
     </button>
   );

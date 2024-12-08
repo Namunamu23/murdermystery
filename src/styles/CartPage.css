@@ -1,387 +1,244 @@
 /* src/styles/CartPage.css */
 
-/* =========================
-   CSS Variables for Theming
-   ========================= */
-:root {
-  --primary-color: #e50914; /* Red */
-  --secondary-color: #c53030; /* Darker red */
-  --background-color: #000000; /* Black */
-  --text-color: #ffffff; /* White */
-  --light-gray: #a0aec0; /* Light gray for secondary text */
-  --dark-gray: #1a1a1a; /* Dark gray for backgrounds */
-  --border-color: #333333; /* Slightly lighter black for borders */
-  --success-color: #38a169; /* Green for success messages */
-  --error-color: #e53e3e; /* Red for error messages */
-}
-
-/* =========================
-   Container Styling
-   ========================= */
+/* Cart Page Container */
 .cart-page-container {
-  max-width: 1200px; /* Equivalent to max-w-7xl */
-  margin: 0 auto; /* Equivalent to mx-auto */
-  padding: 2rem; /* Equivalent to p-8 */
-  background-color: var(--background-color); /* Black background */
-  color: var(--text-color); /* White text */
-  min-height: calc(
-    100vh - 160px
-  ); /* Adjust based on Navbar and Footer heights */
+  padding: 60px 20px;
+  background-color: var(--background-color);
+  min-height: 80vh;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* =========================
-   Title Styling
-   ========================= */
+/* Cart Page Title */
 .cart-page-title {
-  font-size: 2rem; /* Equivalent to text-3xl */
-  font-weight: 600; /* Equivalent to font-semibold */
-  margin-bottom: 1.5rem; /* Equivalent to mb-6 */
-  color: var(--primary-color); /* Red accent */
   text-align: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--highlight-color);
+  margin-bottom: 40px;
   text-transform: uppercase;
-  letter-spacing: 2px;
 }
 
-/* =========================
-   Message Box
-   ========================= */
+/* Message Box */
 .cart-message-box {
-  padding: 1rem 1.5rem; /* Equivalent to p-4 */
-  border-radius: 0.375rem; /* Equivalent to rounded */
-  margin-bottom: 1.5rem; /* Equivalent to mb-6 */
-  font-size: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding: 15px 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 600;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .cart-message-box.success {
-  background-color: var(--success-color); /* Green background */
-  color: var(--text-color); /* White text */
+  background-color: #28a745; /* Green for success */
+  color: #ffffff;
 }
 
 .cart-message-box.error {
-  background-color: var(--error-color); /* Red background */
-  color: var(--text-color); /* White text */
+  background-color: #dc3545; /* Red for error */
+  color: #ffffff;
 }
 
-/* =========================
-   Loading Spinner
-   ========================= */
-.loading-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 50vh; /* Adjust as needed */
-}
-
-.spinner {
-  border: 4px solid rgba(255, 255, 255, 0.1);
-  border-top: 4px solid var(--primary-color); /* Red spinner */
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  animation: spin 1s linear infinite;
-  margin-bottom: 1rem;
-}
-
-.loading-message {
-  font-size: 1.25rem;
-  color: var(--light-gray);
-}
-
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-/* =========================
-   Empty Cart Message
-   ========================= */
+/* Empty Cart Message */
 .empty-cart-message {
   text-align: center;
-  color: var(--light-gray);
+  color: var(--text-color);
+  font-size: 1.2rem;
+  margin-top: 50px;
 }
 
-.empty-cart-message p {
-  margin-bottom: 1rem;
-  font-size: 1.25rem;
-}
-
-/* =========================
-   Browse Products Button
-   ========================= */
 .browse-products-button {
-  margin-top: 1rem; /* Equivalent to mt-4 */
-  background-color: var(--primary-color); /* Red background */
-  color: var(--text-color); /* White text */
-  padding: 0.75rem 1.5rem; /* Equivalent to px-6 py-3 */
-  border: none;
-  border-radius: 0.375rem; /* Equivalent to rounded */
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  background-color: var(--highlight-color);
+  color: var(--background-color);
+  padding: 10px 20px;
+  border-radius: 25px;
+  text-decoration: none;
   font-weight: 600;
-  font-size: 1rem;
+  margin-top: 20px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+  border: none;
 }
 
 .browse-products-button:hover {
-  background-color: var(--secondary-color); /* Darker red on hover */
-  transform: translateY(-2px);
+  background-color: var(--button-hover-color);
+  transform: translateY(-3px);
 }
 
-/* =========================
-   Cart Table Container
-   ========================= */
+/* Cart Table Container */
 .cart-table-container {
   overflow-x: auto;
-  border-radius: 0.375rem; /* Equivalent to rounded */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Equivalent to shadow-md */
+  margin-bottom: 30px;
 }
 
-/* =========================
-   Cart Table
-   ========================= */
 .cart-table {
-  width: 100%; /* Equivalent to min-w-full */
-  background-color: var(--dark-gray); /* Dark gray background */
+  width: 100%;
   border-collapse: collapse;
 }
 
 .cart-table-header {
-  background-color: var(--background-color); /* Black background */
+  background-color: var(--card-background);
 }
 
 .cart-table-header-cell {
-  padding: 0.75rem 1.5rem; /* Equivalent to px-6 py-3 */
-  border-bottom: 1px solid var(--border-color); /* Equivalent to border-b */
+  padding: 15px;
   text-align: left;
-  font-size: 0.875rem; /* Equivalent to text-sm */
-  font-weight: 500; /* Equivalent to font-medium */
-  color: var(--light-gray); /* Light gray text */
-  text-transform: uppercase;
-  letter-spacing: 0.05em; /* Equivalent to tracking-wider */
+  font-size: 1rem;
+  color: var(--text-color);
+  border-bottom: 1px solid var(--border-color);
 }
 
-/* =========================
-   Cart Table Rows
-   ========================= */
-.cart-table-row {
-  transition: background-color 0.3s ease-in-out;
+.cart-table-row:nth-child(even) {
+  background-color: var(--card-background);
 }
 
 .cart-table-row:hover {
-  background-color: var(--dark-gray); /* Slightly lighter on hover */
+  background-color: var(--highlight-color);
+  color: var(--background-color);
 }
 
-/* =========================
-   Cart Table Cells
-   ========================= */
 .cart-table-cell {
-  padding: 1rem 1.5rem; /* Equivalent to px-6 py-4 */
-  border-bottom: 1px solid var(--border-color); /* Equivalent to border-b */
-  font-size: 0.875rem; /* Equivalent to text-sm */
-  color: var(--text-color); /* White text */
-}
-
-.product-name-cell {
+  padding: 15px;
+  font-size: 1rem;
   color: var(--text-color);
+  border-bottom: 1px solid var(--border-color);
 }
 
+/* Quantity Controls */
 .quantity-cell {
-  text-align: center;
+  display: flex;
+  align-items: center;
 }
 
-/* =========================
-   Quantity Controls
-   ========================= */
 .quantity-controls {
   display: flex;
   align-items: center;
-  justify-content: center;
 }
 
 .quantity-button {
-  background-color: var(--dark-gray); /* Dark gray background */
-  color: var(--light-gray); /* Light gray text */
-  padding: 0.5rem;
-  border: none;
+  background-color: var(--card-background);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  padding: 5px;
+  border-radius: 4px;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 0.375rem; /* Equivalent to rounded */
 }
 
-.decrease-button {
-  border-top-left-radius: 0.375rem; /* Equivalent to rounded-l */
-  border-bottom-left-radius: 0.375rem;
+.quantity-button:hover {
+  background-color: var(--highlight-color);
+  color: var(--background-color);
 }
 
-.increase-button {
-  border-top-right-radius: 0.375rem; /* Equivalent to rounded-r */
-  border-bottom-right-radius: 0.375rem;
-}
-
-.quantity-button:hover:not(.disabled-button) {
-  background-color: var(--secondary-color); /* Darker red on hover */
-  transform: scale(1.05);
-}
-
-.quantity-button:disabled,
-.disabled-button {
+.quantity-button.disabled-button {
+  background-color: #6c757d; /* Gray for disabled */
   cursor: not-allowed;
-  opacity: 0.5;
-}
-
-.quantity-icon {
-  height: 1rem; /* Equivalent to h-4 */
-  width: 1rem; /* Equivalent to w-4 */
 }
 
 .quantity-value {
-  padding: 0.5rem 0.75rem; /* Equivalent to px-3 py-1 */
-  border-top: 1px solid var(--border-color); /* Equivalent to border-t */
-  border-bottom: 1px solid var(--border-color); /* Equivalent to border-b */
-  width: 3rem; /* Equivalent to w-12 */
-  text-align: center;
-  background-color: var(--dark-gray); /* Dark gray background */
-  color: var(--text-color); /* White text */
+  margin: 0 10px;
+  font-size: 1rem;
+  color: var(--text-color);
 }
 
-/* =========================
-   Actions Cell
-   ========================= */
-.actions-cell {
-  text-align: center;
+.quantity-icon {
+  width: 18px;
+  height: 18px;
 }
 
 /* Delete Item Button */
 .delete-item-button {
-  color: var(--error-color); /* Red text */
   background: none;
   border: none;
+  color: var(--text-color);
   cursor: pointer;
-  transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
 }
 
 .delete-item-button:hover {
-  color: var(--secondary-color); /* Darker red on hover */
+  color: var(--highlight-color);
 }
 
 .delete-icon {
-  height: 1.25rem; /* Equivalent to h-5 */
-  width: 1.25rem; /* Equivalent to w-5 */
+  width: 20px;
+  height: 20px;
 }
 
-/* =========================
-   Summary and Actions
-   ========================= */
+/* Cart Summary and Actions */
 .cart-summary-actions {
-  margin-top: 1.5rem; /* Equivalent to mt-6 */
   display: flex;
-  flex-direction: column; /* Equivalent to flex-col */
+  justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
-@media (min-width: 768px) {
-  .cart-summary-actions {
-    flex-direction: row; /* Equivalent to md:flex-row */
-    justify-content: space-between; /* Equivalent to md:justify-between */
-    align-items: center;
-  }
-}
-
-/* Cart Total */
 .cart-total {
-  font-size: 1.25rem; /* Equivalent to text-xl */
-  font-weight: 600; /* Equivalent to font-semibold */
-  color: var(--text-color); /* White text */
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--text-color);
 }
 
-/* Action Buttons Container */
 .cart-action-buttons {
-  margin-top: 1rem; /* Equivalent to mt-4 */
   display: flex;
-  gap: 1rem; /* Equivalent to space-x-4 */
+  gap: 15px;
+  flex-wrap: wrap;
 }
 
-@media (min-width: 768px) {
-  .cart-action-buttons {
-    margin-top: 0; /* Equivalent to md:mt-0 */
-  }
-}
-
-/* Clear Cart Button */
-.clear-cart-button {
-  background-color: var(--error-color); /* Red background */
-  color: var(--text-color); /* White text */
-  padding: 0.5rem 1rem; /* Equivalent to px-4 py-2 */
-  border: none;
-  border-radius: 0.375rem; /* Equivalent to rounded */
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-  display: flex;
+.clear-cart-button,
+.checkout-button {
+  display: inline-flex;
   align-items: center;
+  background-color: var(--highlight-color);
+  color: var(--background-color);
+  padding: 10px 20px;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
   font-weight: 600;
-  font-size: 0.875rem; /* Equivalent to text-sm */
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.clear-cart-button:hover {
-  background-color: var(--secondary-color); /* Darker red on hover */
-  transform: translateY(-2px);
+.clear-cart-button:hover,
+.checkout-button:hover {
+  background-color: var(--button-hover-color);
+  transform: translateY(-3px);
 }
 
 .clear-cart-icon {
-  height: 1.25rem; /* Equivalent to h-5 */
-  width: 1.25rem; /* Equivalent to w-5 */
-  margin-right: 0.5rem; /* Equivalent to mr-2 */
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
 }
 
-/* Checkout Button */
+/* Checkout Button Specifics */
 .checkout-button {
-  background-color: var(--primary-color); /* Red background */
-  color: var(--text-color); /* White text */
-  padding: 0.5rem 1rem; /* Equivalent to px-4 py-2 */
-  border: none;
-  border-radius: 0.375rem; /* Equivalent to rounded */
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-  display: flex;
-  align-items: center;
-  font-weight: 600;
-  font-size: 0.875rem; /* Equivalent to text-sm */
+  background-color: #28a745; /* Green for checkout */
 }
 
 .checkout-button:hover {
-  background-color: var(--secondary-color); /* Darker red on hover */
-  transform: translateY(-2px);
+  background-color: #218838; /* Darker green on hover */
 }
 
-/* =========================
-   Responsive Adjustments
-   ========================= */
+/* Responsive Design */
 @media (max-width: 768px) {
-  .cart-table-header-cell,
-  .cart-table-cell {
-    padding: 0.75rem 1rem; /* Adjust padding for smaller screens */
-  }
-
-  .quantity-value {
-    width: 2.5rem; /* Adjust width for smaller screens */
-  }
-
-  .cart-action-buttons {
+  .cart-summary-actions {
     flex-direction: column;
-    gap: 0.5rem;
-    width: 100%;
+    align-items: flex-start;
   }
 
-  .clear-cart-button,
-  .checkout-button {
+  .cart-total {
+    font-size: 1.3rem;
+  }
+
+  .checkout-button,
+  .clear-cart-button {
     width: 100%;
     justify-content: center;
   }

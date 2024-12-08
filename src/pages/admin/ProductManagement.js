@@ -3,7 +3,6 @@
 import React, { useEffect, useState } from "react";
 import productService from "../../services/productService";
 
-import "../../styles/ProductManagement.css"; // Import your custom CSS
 
 function ProductManagement() {
   const [products, setProducts] = useState([]);

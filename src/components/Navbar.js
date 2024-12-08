@@ -12,8 +12,7 @@ import {
   UserCircleIcon,
   SearchIcon,
 } from "@heroicons/react/outline";
-
-import "../styles/Navbar.css"; // Import your custom CSS
+import "../styles/Navbar.css"; // Import Navbar CSS
 
 function Navbar() {
   const navigate = useNavigate();
@@ -172,7 +171,11 @@ function Navbar() {
               </button>
               {/* Profile Dropdown */}
               {isDesktopProfileDropdownOpen && (
-                <div className="profile-dropdown">
+                <div
+                  className={`profile-dropdown ${
+                    isDesktopProfileDropdownOpen ? "open" : ""
+                  }`}
+                >
                   <Link
                     to="/profile"
                     className="dropdown-link"
@@ -221,6 +224,7 @@ function Navbar() {
             </>
           )}
           {/* Theme Toggle */}
+          <ThemeToggle />
         </div>
 
         {/* Mobile Menu Button */}
@@ -376,7 +380,9 @@ function Navbar() {
             </>
           )}
           {/* Theme Toggle in Mobile Menu */}
-          <div className="mobile-theme-toggle"></div>
+          <div className="mobile-theme-toggle">
+            <ThemeToggle />
+          </div>
         </div>
       )}
     </nav>

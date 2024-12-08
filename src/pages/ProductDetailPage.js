@@ -11,7 +11,8 @@ import {
   HeartIcon,
 } from "@heroicons/react/solid";
 import { CartContext } from "../contexts/CartContext";
-import "../styles/ProductDetailPage.css"; // Import your custom CSS
+import "../styles/ProductDetailPage.css"; // Import ProductDetailPage CSS
+import Modal from "../components/Modal"; // Import Modal component
 
 function ProductDetailPage() {
   const { id } = useParams();

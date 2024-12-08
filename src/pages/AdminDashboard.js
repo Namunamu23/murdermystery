@@ -12,7 +12,6 @@ import UserManagement from "./admin/UserManagement";
 import OrderManagement from "./admin/OrderManagement";
 import SalesAnalytics from "./admin/SalesAnalytics";
 
-import "../styles/AdminDashboard.css"; // Updated CSS
 
 function AdminDashboard() {
   return (

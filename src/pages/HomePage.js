@@ -1,22 +1,26 @@
 // src/pages/HomePage.js
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { PlayIcon } from "@heroicons/react/solid";
 import { Parallax } from "react-parallax";
 import "../styles/HomePage.css"; // Import your custom CSS
-import bannerImage2 from "../images/banner.jpg";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import bannerImage from "../images/banner1.jpeg";
 
 function HomePage() {
+  useEffect(() => {
+    AOS.init({ duration: 1000, once: true });
+  }, []);
   return (
     <div className="home-container">
       {/* Parallax Hero Section */}
       <Parallax
         bgImage={bannerImage}
         strength={300}
-        bgImageStyle={{ maxHeight: "70vh" }}
+        bgImageStyle={{ height: "100%", objectFit: "cover" }}
       >
-        <div className="hero-section">
+        <div className="hero-section" data-aos="fade-in">
           <div className="overlay"></div>
           <div className="hero-content">
             <h1 className="home-title">Welcome to Mystery City</h1>
@@ -33,11 +37,11 @@ function HomePage() {
       </Parallax>
 
       {/* Featured Products Section */}
-      <section className="featured-products">
+      <section className="featured-products" data-aos="fade-up">
         <h2 className="featured-title">Featured Cases</h2>
         <div className="featured-grid">
           {/* Example Featured Products */}
-          <div className="featured-card">
+          <div className="featured-card" data-aos="zoom-in">
             <img
               src="/images/featured-product1.jpg"
               alt="Case File: The Silent Witness"
@@ -55,7 +59,11 @@ function HomePage() {
               </Link>
             </div>
           </div>
-          <div className="featured-card">
+          <div
+            className="featured-card"
+            data-aos="zoom-in"
+            data-aos-delay="100"
+          >
             <img
               src="/images/featured-product2.jpg"
               alt="Case File: Midnight Heist"
@@ -77,19 +85,22 @@ function HomePage() {
         </div>
       </section>
 
-      {/* Optional: Additional Sections */}
-      {/* Testimonials, Latest Releases, etc. */}
-      <section className="testimonials">
+      {/* Testimonials Section */}
+      <section className="testimonials" data-aos="fade-up">
         <h2 className="testimonials-title">What Our Users Say</h2>
         <div className="testimonials-grid">
-          <div className="testimonial-card">
+          <div className="testimonial-card" data-aos="fade-right">
             <p className="testimonial-text">
               "Mystery City has transformed my evenings! Each case file is more
               intriguing than the last."
             </p>
             <p className="testimonial-author">- Vigaca Vigacashvili</p>
           </div>
-          <div className="testimonial-card">
+          <div
+            className="testimonial-card"
+            data-aos="fade-left"
+            data-aos-delay="100"
+          >
             <p className="testimonial-text">
               "The attention to detail in each mystery is astounding. Highly
               recommend to fellow detectives."

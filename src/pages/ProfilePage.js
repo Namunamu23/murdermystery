@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import authService from "../services/authService";
 import { UserCircleIcon } from "@heroicons/react/solid"; // You can replace this with any icon library or an SVG
-import "../styles/ProfilePage.css"; // Import the corresponding CSS
+import "../styles/ProfilePage.css"; // Import ProfilePage CSS
 
 function ProfilePage() {
   const [userData, setUserData] = useState({
@@ -143,19 +143,21 @@ function ProfilePage() {
   return (
     <div className="profile-container">
       <div className="profile-header">
-        <UserCircleIcon className="profile-icon" />
-        <h2 className="profile-title">Your Profile</h2>
+        <div style={{ display: "flex", alignItems: "center", gap: "15px" }}>
+          <UserCircleIcon className="profile-icon" />
+          <h2 className="profile-title">Your Profile</h2>
+        </div>
         <button onClick={handleEditToggle} className="edit-button">
           {isEditing ? "Cancel" : "Edit Profile"}
         </button>
       </div>
       {message && (
-        <div className="profile-message success" role="alert">
+        <div className={`profile-message success`} role="alert">
           {message}
         </div>
       )}
       {error && (
-        <div className="profile-message error" role="alert">
+        <div className={`profile-message error`} role="alert">
           {error}
         </div>
       )}

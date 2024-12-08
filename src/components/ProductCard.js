@@ -3,6 +3,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { EyeIcon } from "@heroicons/react/solid";
+import "../styles/ProductCard.css"; // Import ProductCard CSS
 
 function ProductCard({ product }) {
   return (

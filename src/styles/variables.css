@@ -1,0 +1,41 @@
+/* src/styles/variables.css */
+
+:root {
+  /* Dark Modern Palette */
+  --background-color: #1c1c1c; /* Charcoal Black */
+  --text-color: #f5f5f5; /* Soft White */
+  --highlight-color: #00ffff; /* Vibrant Cyan */
+  --button-hover-color: #7f00ff; /* Electric Purple */
+  --card-background: #2c2c2c; /* Slightly lighter black for cards */
+  --overlay-color: rgba(28, 28, 28, 0.6); /* Overlay with transparency */
+  --cta-background: #00ffff;
+  --cta-text-color: #1c1c1c;
+  --cta-hover-background: #7f00ff;
+  --cta-hover-text-color: #f5f5f5;
+
+  /* Additional Variables (Optional) */
+  --border-color: #333333;
+  --shadow-color: rgba(0, 0, 0, 0.5);
+  --success-color: #28a745;
+  --error-color: #dc3545;
+}
+
+/* Light Theme Variables (Optional) */
+:root[data-theme="light"] {
+  --background-color: #f5f5f5; /* Soft White */
+  --text-color: #1c1c1c; /* Charcoal Black */
+  --highlight-color: #00ffff; /* Vibrant Cyan */
+  --button-hover-color: #7f00ff; /* Electric Purple */
+  --card-background: #ffffff;
+  --overlay-color: rgba(245, 245, 245, 0.6);
+  --cta-background: #00ffff;
+  --cta-text-color: #1c1c1c;
+  --cta-hover-background: #7f00ff;
+  --cta-hover-text-color: #f5f5f5;
+
+  /* Additional Variables (Optional) */
+  --border-color: #cccccc;
+  --shadow-color: rgba(0, 0, 0, 0.2);
+  --success-color: #28a745;
+  --error-color: #dc3545;
+}

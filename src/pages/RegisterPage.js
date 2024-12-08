@@ -5,7 +5,7 @@ import authService from "../services/authService";
 import { useNavigate, Link } from "react-router-dom";
 import { UserAddIcon, EyeIcon, EyeOffIcon } from "@heroicons/react/solid";
 import { CartContext } from "../contexts/CartContext";
-import "../styles/RegisterPage.css";
+import "../styles/RegisterPage.css"; // Import RegisterPage CSS
 
 function RegisterPage() {
   const [user, setUser] = useState({

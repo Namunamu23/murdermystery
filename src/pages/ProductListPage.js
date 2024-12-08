@@ -5,8 +5,7 @@ import productService from "../services/productService";
 import { Link } from "react-router-dom";
 import { EyeIcon } from "@heroicons/react/solid";
 import ProductCard from "../components/ProductCard"; // Reusable Product Card Component
-
-import "../styles/ProductListPage.css"; // Import your custom CSS
+import "../styles/ProductListPage.css"; // Import ProductListPage CSS
 
 function ProductListPage() {
   const [products, setProducts] = useState([]);

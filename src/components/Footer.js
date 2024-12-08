@@ -8,8 +8,8 @@ import {
 } from "react-icons/fa";
 import { HiOutlineArrowUp } from "react-icons/hi";
 import { Link } from "react-router-dom";
+import "../styles/footer.css"; // Import the Footer CSS here
 
-import "../styles/Footer.css"; // Import your custom CSS
 
 function Footer() {
   const scrollToTop = () => {
